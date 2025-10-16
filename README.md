@@ -1,10 +1,5 @@
 # 💻 PriceScout API: Comparador de Precios de Hardware
 
-[](https://www.java.com)
-[](https://spring.io/projects/spring-boot)
-[](https://www.docker.com/)
-[](https://opensource.org/licenses/MIT)
-
 **PriceScout API** es un sistema de microservicios diseñado para demostrar habilidades avanzadas en la creación de sistemas distribuidos, resilientes y escalables con **Spring Cloud**. El proyecto simula un comparador de precios de hardware que centraliza información de múltiples proveedores para ofrecer al usuario la mejor opción en tiempo real.
 
 -----
