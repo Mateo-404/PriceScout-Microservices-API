@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        # Ruta hacia el Product Service
+        - id: product-service
+          uri: lb://product-service  # Usa load balancing vía Eureka
+          predicates:
+            - Path=/api/v1/products/**
+
+        # Ruta hacia el Price Service
+        - id: price-service
+          uri: lb://price-service
+          predicates:
+            - Path=/api/v1/search/**
+server:
+  port: 8080  # Puerto público del Gateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

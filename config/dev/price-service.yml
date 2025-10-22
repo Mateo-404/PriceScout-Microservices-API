@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: price-service
+  cache:
+    type: redis  # Habilita Redis como caché (puede cambiar a simple)
+  data:
+    redis:
+      host: localhost
+      port: 6379
+server:
+  port: 8082
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+# Configuración de tolerancia a fallos
+resilience4j:
+  circuitbreaker:
+    instances:
+      default:
+        failure-rate-threshold: 50       # % de fallos para abrir el circuito
+        wait-duration-in-open-state: 10s  # Tiempo antes de reintentar
+        permitted-number-of-calls-in-half-open-state: 3
+  retry:
+    instances:
+      default:
+        max-attempts: 3
+        wait-duration: 1s

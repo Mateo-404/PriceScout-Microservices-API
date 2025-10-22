@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: products
+  datasource:
+    url: jdbc:postgresql://localhost:5432/barber  # Conexión a la BD local
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update  # Actualiza el esquema al arrancar
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  sql:
+    init:
+      mode: never  # No ejecutar scripts automáticos al iniciar
+server:
+  port: 8081  # Puerto del microservicio
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

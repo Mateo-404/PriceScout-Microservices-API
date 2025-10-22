@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: dev  # Perfil activo global
+
+# Configuración de Eureka compartida
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka  # Dirección del Discovery Server
+
+# Niveles de log para debugging y monitoreo
+logging:
+  level:
+    org.springframework: INFO
+    com.pricescout: DEBUG
